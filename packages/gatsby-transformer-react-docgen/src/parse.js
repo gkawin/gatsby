@@ -63,8 +63,6 @@ export default function parseMetadata(content, node, options) {
     )
   } catch (err) {
     if (err.message === ERROR_MISSING_DEFINITION) return []
-    // reset the stack to here since it's not helpful to see all the react-docgen guts
-    // const parseErr = new Error(err.message)
     if (err.loc) {
       err.codeFrame = codeFrameColumns(
         content,
