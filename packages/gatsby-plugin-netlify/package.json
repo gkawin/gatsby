@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-netlify",
   "description": "A Gatsby plugin which generates a _headers file for netlify",
-  "version": "1.0.19-11",
+  "version": "1.0.19-14",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.47",
     "fs-extra": "^4.0.2",
+    "kebab-hash": "^0.1.2",
     "lodash": "^4.17.4",
     "webpack-assets-manifest": "^1.0.0"
   },

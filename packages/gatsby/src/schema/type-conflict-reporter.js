@@ -62,10 +62,11 @@ const formatValue = value => {
 
 class TypeConflictEntry {
   selector: string
-  types: Map<string, TypeConflict> = new Map()
+  types: Map<string, TypeConflict>
 
   constructor(selector: string) {
     this.selector = selector
+    this.types = new Map()
   }
 
   addExample({ value, type, parent }: TypeConflictExample) {
@@ -77,7 +78,7 @@ class TypeConflictEntry {
 
   printEntry() {
     const sortedByTypeName = _.sortBy(
-      this.types.entries(),
+      Array.from(this.types.entries()),
       ([typeName, value]) => typeName
     )
 
@@ -95,10 +96,10 @@ class TypeConflictEntry {
 }
 
 class TypeConflictReporter {
-  entries: Map<string, TypeConflictEntry> = new Map()
+  entries: Map<string, TypeConflictEntry>
 
   constructor() {
-    this.clearConflicts()
+    this.entries = new Map()
   }
 
   clearConflicts() {
